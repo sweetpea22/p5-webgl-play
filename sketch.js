@@ -1,32 +1,21 @@
-function setup() {
-  createCanvas(640, 480);
-  // stroke(255, 0, 155);
-  frameRate(60);
-}
+import { brownian } from "./basics/brownian";
+let num = 2000;
+let range = 40;
 
-let a = 120;
-let x = 0;
+let ax = [];
+let ay = [];
+
+
+function setup() {
+  createCanvas(710, 400);
+  for ( let i = 0; i < num; i++ ) {
+    ax[i] = width / 2;
+    ay[i] = height / 2;
+  }
+  frameRate(15);
+}
 
 function draw() {
   background(0);
-  function slideLeft() {
-    a = a - 25;
-    if (a < 0) {
-      a = width
-    }
-    rect(a, 90, a, 17);
-    rect(a, 120, a, 20);
-  }
-  function slideRight() {
-    x = x + 19;
-    if (x > width) {
-      x = x - width;
-    }
-    rect(x, 30, 120, 20);
-    rect(x, 60, 80, 18);
-  }
-  
-  slideLeft();
-  slideRight();
-
+  brownian();
 }
