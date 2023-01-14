@@ -1,5 +1,4 @@
-// init seed value and range
-let a = 40;
+let a;
 
 function setup() {
   createCanvas(1000, 800);
