@@ -1,4 +1,5 @@
 let bubbles = [];
+let easing = 0.05;
 
 function setup() {
   createCanvas(600, 400);
