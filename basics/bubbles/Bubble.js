@@ -1,22 +1,4 @@
-let bubbles = [];
-let easing = 0.05;
-
-function setup() {
-  createCanvas(600, 400);
-  for (var i = 0; i < 50; i++) {
-    bubbles[i] = new Bubble();
-  }
-}
-
-function draw() {
-  background(0);
-  for (var i = 0; i < bubbles.length; i++) {
-    bubbles[i].move();
-    bubbles[i].display();
-  }
-}
-
-function Bubble() {
+function Bubble(x, y) {
   (this.x = random(0, width)),
     (this.y = random(0, height)),
     (this.move = function () {
