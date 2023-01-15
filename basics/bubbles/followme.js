@@ -17,16 +17,15 @@ function Bubble(x, y) {
 
 function setup() {
   createCanvas(720, 450);
-  // for (var i = 0; i < 1; i++) {
-  // bubbles[i] = new Bubble();
-  // }
 }
 
-function mouseDragged() {
+function mousePressed() {
   bubbles.push(new Bubble(mouseX, mouseY));
   if (bubbles.length > 10) {
     bubbles.splice(0, 1);
   }
+  removeOffscreen(bubbles);
+  // removeOffscreen(bubbles[bubbles.length]);
 }
 
 function draw() {
@@ -36,3 +35,26 @@ function draw() {
     bubbles[i].display();
   }
 }
+
+//challenge, remove bubble from array if it touches the edges of the screen
+
+function removeOffscreen(arr) {
+  let currentBubble = arr[arr.length - 1];
+
+  console.log(arr);
+  console.log(currentBubble);
+  // console.log(arr[currentBubbleIndex]);
+  if (
+    currentBubble.x >= width - 5 ||
+    currentBubble.y >=
+    (height - 5 || currentBubble.x <= 4 || currentBubble.y <= 4)
+  ) {
+    arr.splice(arr[arr.length - 1], 1);
+  }
+}
+
+// store val when bubble touches maxweight/maxheight and 0 0. 
+
+// compare bubble at bubbles[i], record currentBubble. 
+// if touching, bubbles.splice(bubbles[i], 1);
+// console.log(bubbles)
