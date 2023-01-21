@@ -13,7 +13,7 @@ function Bubble(x, y) {
       this.lifespan--;
     });
   this.isFinished = function () {
-    if (this.lifespan <= 0) {
+    if (this.lifespan < 0) {
       return true;
     } else {
       return false;
