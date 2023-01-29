@@ -2,7 +2,7 @@ let img;
 let cnv;
 
 function preload() {
-  img = loadImage('assets/3.png');
+  img = loadImage('assets/4.png');
 }
 
 function setup() {
@@ -19,10 +19,10 @@ function setup() {
       let xPos = col;
       let yPos = row;
       let c = img.get(xPos, yPos);
-      push();
 
       point(xPos, yPos);
       stroke(color(c));
+      push();
       pop();
     }
   }
