@@ -18,14 +18,14 @@ function draw() {
   // rect(width / 2, height / 2, 400, 400, 32);
 
   radialGradient(
-    width / 2 - 40,
-    height / 2 - 100,
+    250,
+    220,
     0,
-    width / 2 - 40,
-    height / 2 - 100,
-    350,
-    color(190, 100, 100, 100),
-    color(310, 100, 100, 100)
+    250,
+    250,
+    250,
+    color(150, 100, 100, 100),
+    color(130, 100, 40, 0)
   );
   ellipse(width / 2, height / 2, 400, 400);
 }
