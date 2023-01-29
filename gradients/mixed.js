@@ -1,22 +1,21 @@
 function setup() {
   createCanvas(800, 800);
   colorMode(HSB, 360, 100, 100, 100);
-  rectMode(CENTER);
   noStroke();
 }
 
 function draw() {
   background(230, 30, 23);
-  translate(mouseX, mouseY);
+  ellipseMode(CENTER);
   linearGradient(
     width / 2,
     200,
     width / 2,
-    height - 150,
+    height,
     color(60, 50, 100, 100),
     color(290, 100, 40, 100)
   );
-  ellipse(0, 0, 400, 400);
+  ellipse(width / 2, height / 2, 400, 400);
   radialGradient(
     width - 100,
     100,
@@ -27,7 +26,7 @@ function draw() {
     color(190, 100, 100, 100),
     color(0, 0, 0, 0)
   );
-  ellipse(0, 0, 400, 400);
+  ellipse(width / 2, height / 2, 400, 400);
 }
 
 function linearGradient(sX, sY, eX, eY, colorS, colorE) {
