@@ -26,8 +26,8 @@ function setup() {
       strokeWeight(random(5));
       point(xPos, yPos);
       strokeWeight(random(3));
-      stroke(color(c));
-      // stroke(color(random(120), random(190), random(190)));
+      // stroke(color(c));
+      stroke(color(random(120), random(190), random(190)));
 
       curve(
         xPos,
