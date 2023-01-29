@@ -30,21 +30,21 @@ function draw() {
   ellipse(width / 2, height / 2, 400, 400);
 }
 
-function linearGradient(sX, sY, eX, eY, colorS, colorE) {
+export function linearGradient(sX, sY, eX, eY, colorS, colorE) {
   let gradient = drawingContext.createLinearGradient(sX, sY, eX, eY);
   gradient.addColorStop(0, colorS);
   gradient.addColorStop(1, colorE);
   drawingContext.fillStyle = gradient;
 }
 
-function radialGradient(sX, sY, sR, eX, eY, eR, colorS, colorE) {
+export function radialGradient(sX, sY, sR, eX, eY, eR, colorS, colorE) {
   let gradient = drawingContext.createRadialGradient(sX, sY, sR, eX, eY, eR);
   gradient.addColorStop(0, colorS);
   gradient.addColorStop(1, colorE);
   drawingContext.fillStyle = gradient;
 }
 
-function keyPressed() {
+export function keyPressed() {
   if (key === 's') {
     saveCanvas('test.jpg');
   }
