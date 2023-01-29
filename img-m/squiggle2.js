@@ -2,7 +2,7 @@ let img;
 let cnv;
 
 function preload() {
-  img = loadImage('assets/5.png');
+  img = loadImage('assets/6.png');
 }
 
 function setup() {
@@ -13,31 +13,32 @@ function setup() {
   cnv.position(newCanvasX, newCanvasY);
 
   //get pixel info
-  for (var col = 0; col < img.width; col += 5) {
-    for (var row = 0; row < img.height; row += 5) {
+  for (var col = 0; col < img.width; col += 8) {
+    for (var row = 0; row < img.height; row += 8) {
       let xPos = col;
       let yPos = row;
       let c = img.get(xPos, yPos);
       push();
 
       translate(xPos, yPos);
-      rotate(radians(random(360)));
+      rotate(radians(random(50)));
       noFill();
-      strokeWeight(random(5));
+      strokeWeight(random(4));
+      stroke(color(random(80), random(190), random(200)));
       point(xPos, yPos);
-      strokeWeight(random(3));
-      // stroke(color(c));
-      stroke(color(random(120), random(190), random(190)));
+      strokeWeight(random(4));
+      stroke(color(c));
+      // stroke(color(random(120), random(190), random(190)));
 
       curve(
         xPos,
         yPos,
         cos(yPos) + sin(xPos) * 10,
         0,
+        sin(xPos) * cos(yPos) * 40,
         0,
-        -cos(yPos) * 10,
-        sin(xPos) * cos(yPos) * 20,
-        cos(yPos) * sin(xPos) * 30
+        -cos(yPos) * 50,
+        cos(yPos) * sin(xPos) * 40
       );
       pop();
     }
